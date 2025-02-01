@@ -9,7 +9,7 @@ start.addEventListener("click", function(event) {
                 reject("Invalid input");
                 return;
             }
-            document.getElementById("output").innerHTML = `Initial value: ${num}<br>`;
+            document.getElementById("output").innerText = `Initial value: ${num}\n`;
             resolve(num);
         }, 2000);
     });
@@ -18,7 +18,7 @@ start.addEventListener("click", function(event) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 let multi = data * 2;
-                document.getElementById("output").innerHTML += `Result: ${multi}<br>`;
+                document.getElementById("output").innerText += `Result: ${multi}\n`;
                 resolve(multi);
             }, 1000);
         });
@@ -28,7 +28,7 @@ start.addEventListener("click", function(event) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 let sub = data - 3;
-                document.getElementById("output").innerHTML += `Result: ${sub}<br>`;
+                document.getElementById("output").innerText += `Result: ${sub}\n`;
                 resolve(sub);
             }, 1000);
         });
@@ -38,7 +38,7 @@ start.addEventListener("click", function(event) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 let divi = data / 2;
-                document.getElementById("output").innerHTML += `Result: ${divi}<br>`;
+                document.getElementById("output").innerText += `Result: ${divi}\n`;
                 resolve(divi);
             }, 1000);
         });
@@ -48,7 +48,7 @@ start.addEventListener("click", function(event) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 let add = data + 10;
-                document.getElementById("output").innerHTML += `Result: ${add}<br>`;
+                document.getElementById("output").innerText += `Result: ${add}\n`;
                 resolve(add);
             }, 1000);
         });
@@ -60,7 +60,7 @@ start.addEventListener("click", function(event) {
         .then((data) => myPromise4(data))
         .then((data) => myPromise5(data))
         .then((data) => {
-            document.getElementById("output").innerHTML += `<br>Final Result: ${data}`;
+            document.getElementById("output").innerText += `\nFinal Result: ${data}`;
             console.log("Final result:", data);
         })
         .catch((error) => {
