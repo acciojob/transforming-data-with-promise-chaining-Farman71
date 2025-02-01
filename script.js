@@ -1,19 +1,18 @@
 let start = document.getElementById("btn");
 start.addEventListener("click", function(event) {
     let myPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let num = document.getElementById("ip").value.trim();
-            num = parseInt(num);
-            if (isNaN(num)) {
-                document.getElementById("output").innerText = "Please enter a valid number.";
-                reject("Invalid input");
-                return;
-            }
-            document.getElementById("output").innerText = `Initial value: ${num}\n`;
-            resolve(num);
-        }, 2000);
-    });
-
+    setTimeout(() => {
+        let num = document.getElementById("ip").value.trim();
+        num = parseInt(num);
+        if (isNaN(num)) {
+            document.getElementById("output").innerText = "Please enter a valid number.";
+            reject("Invalid input");
+            return;
+        }
+        document.getElementById("output").innerText = `Result: ${num}\n`; // set text to 'Result: 5'
+        resolve(num);
+    }, 2000);
+});
     let myPromise2 = (data) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
